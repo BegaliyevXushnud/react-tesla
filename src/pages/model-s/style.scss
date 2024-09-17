@@ -1,0 +1,50 @@
+.container {
+    margin: 0 auto;
+    margin-top: -0.1cm;
+    .carousel-container {
+      position: relative;
+      width: 100%;
+      height: auto; // Bu uslubni o'zingizning ehtiyojingizga moslashtiring
+      overflow: hidden;
+  
+      .swiper-button-next,
+      .swiper-button-prev {
+        color: white; // Tugma matnini oq rangda ko'rsatish
+        width: 50px; // Tugma o'lchamini belgilash
+        height: 50px; // Tugma o'lchamini belgilash
+        background: rgba(0, 0, 0, 0.5); // Tugma fonini yarim shaffof qora rangda qilish
+        border-radius: 50%; // Tugma burchaklarini yumaloq qilish
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 10; // Tugmalarni yuqori qatlamda ko'rsatish
+  
+        &:after {
+          font-size: 24px; // Tugma ikonkasining o'lchami
+          font-family: 'swiper-icons'; // Tugma ikonkasining shrift oilasi
+        }
+      }
+  
+      .swiper-button-next {
+      
+        margin-top: -5cm;
+      }
+  
+      .swiper-button-prev {
+       
+        margin-top: -4.5cm;
+      }
+  
+      .swiper-pagination-bullet {
+        background: white; // Sahifalash nuqtalarining rangini oq qilish
+        width: 12px; // Nuqtaning kengligini belgilash
+        height: 12px; // Nuqtaning balandligini belgilash
+        border-radius: 50%; // Nuqtani yumaloq qilish
+      }
+  
+      .swiper-pagination-bullet-active {
+        background: #ff0000; // Faol sahifalash nuqtasining rangini qizil qilish
+      }
+    }
+  }
+  

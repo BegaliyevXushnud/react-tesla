@@ -1,0 +1,73 @@
+@font-face {
+    font-family: 'SF UI Text';
+    src: url('/path/to/fonts/SF-UI-Text.woff2') format('woff2'),
+         url('/path/to/fonts/SF-UI-Text.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'SF UI Text';
+    src: url('/path/to/fonts/SF-UI-Text-Bold.woff2') format('woff2'),
+         url('/path/to/fonts/SF-UI-Text-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+  }
+  /* header.css */
+.dropdown {
+     position: absolute;
+     right: 0;
+     top: 100%;
+     background-color: #000;
+     color: #fff;
+     border: 1px solid #444;
+     border-radius: 0.5rem;
+     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+     z-index: 50;
+   }
+   
+   .dropdown a {
+     display: block;
+     padding: 0.5rem 1rem;
+     text-decoration: none;
+     color: #fff;
+   }
+   
+   .dropdown a:hover {
+     background-color: #333;
+   }
+   
+  /* Add this to your header.css */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 32px;
+  background-color: black;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-logo {
+  flex: 1;
+}
+
+.header-nav {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+}
+
+.header-nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.header-avatar {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
