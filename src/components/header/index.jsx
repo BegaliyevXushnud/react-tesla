@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { Close } from '@mui/icons-material';
 import TeslaLogo from '../../assets/teslalogo.svg';
 import SearchIcon from '@mui/icons-material/Search';
@@ -53,10 +53,13 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-function Header() {
+function Header({ onLinkClick }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [anchorEl, setAnchorEl] = useState(null);
-  const navigate = useNavigate();  // Use navigate for programmatic navigation
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const [activeLink, setActiveLink] = useState(location.pathname);
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -72,8 +75,23 @@ function Header() {
 
   const handleLogout = () => {
     handleCloseUserMenu();
-    navigate('/logout');  // Use navigate to handle route change
+    navigate('/logout');
   };
+
+  const handleLinkClick = (path) => {
+    setActiveLink(path);
+    if (onLinkClick) {
+      onLinkClick(path); 
+    }
+    navigate(path); 
+  };
+
+  const modelSIsActive = (path) => activeLink === path ? 'border  border-[#0081FF] text-[#0081FF]  rounded-[85px]' : 'border-b-0';
+  const model3IsActive = (path) => activeLink === path ? 'border  border-white text-[white]  rounded-[85px]' : 'border-b-0';
+  const modelXIsActive = (path) => activeLink === path ? 'border  border-[#0081FF] text-[#0081FF]  rounded-[85px]' : 'border-b-0';
+  const modelYIsActive = (path) => activeLink === path ? 'border  border-red-500 text-red-500  rounded-[85px]' : 'border-b-0';
+  const solarRoofIsActive = (path) => activeLink === path ? 'border  border-green-500 text-green-500  rounded-[85px]' : 'border-b-0';
+  const solarPanelsIsActive = (path) => activeLink === path ? 'border  border-yellow-500 text-yellow-500  rounded-[85px]' : 'border-b-0';
 
   return (
     <header className="bg-black text-white p-4 flex justify-between items-center relative p-8 pl-7 pr-8">
@@ -84,12 +102,24 @@ function Header() {
       </div>
 
       <nav className="hidden tablet:flex space-x-4 gap-10">
-        <Link to="/model-s" className="hover:text-gray-400 text-[16px] font-sf-ui">Model S</Link>
-        <Link to="/model-3" className="hover:text-gray-400 text-[16px] font-sf-ui">Model 3</Link>
-        <Link to="/model-x" className="hover:text-gray-400 text-[16px] font-sf-ui">Model X</Link>
-        <Link to="/model-y" className="hover:text-gray-400 text-[16px] font-sf-ui">Model Y</Link>
-        <Link to="/solar-roof" className="hover:text-gray-400 text-[16px] font-sf-ui">Solar Roof</Link>
-        <Link to="/solar-panels" className="hover:text-gray-400 text-[16px] font-sf-ui">Solar Panels</Link>
+        <Link to="/model-s" className={`p-2 ${modelSIsActive('/model-s')}`} onClick={() => handleLinkClick('/model-s')}>
+          Model S
+        </Link>
+        <Link to="/model-3" className={`p-2 ${model3IsActive('/model-3')}`} onClick={() => handleLinkClick('/model-3')}>
+          Model 3
+        </Link>
+        <Link to="/model-x" className={`p-2 ${modelXIsActive('/model-x')}`} onClick={() => handleLinkClick('/model-x')}>
+          Model X
+        </Link>
+        <Link to="/model-y" className={`p-2 ${modelYIsActive('/model-y')}`} onClick={() => handleLinkClick('/model-y')}>
+          Model Y
+        </Link>
+        <Link to="/solar-roof" className={`p-2 ${solarRoofIsActive('/solar-roof')}`} onClick={() => handleLinkClick('/solar-roof')}>
+          Solar Roof
+        </Link>
+        <Link to="/solar-panels" className={`p-2 ${solarPanelsIsActive('/solar-panels')}`} onClick={() => handleLinkClick('/solar-panels')}>
+          Solar Panels
+        </Link>
       </nav>
 
       <div className="hidden tablet:flex space-x-4 items-center">
@@ -129,12 +159,24 @@ function Header() {
         <button className="self-end mb-4" onClick={toggleMenu}>
           <Close fontSize="large" />
         </button>
-        <Link to="/model-s" className="hover:text-gray-400 text-[16px] font-sf-ui">Model S</Link>
-        <Link to="/model-3" className="hover:text-gray-400 text-[16px] font-sf-ui">Model 3</Link>
-        <Link to="/model-x" className="hover:text-gray-400 text-[16px] font-sf-ui">Model X</Link>
-        <Link to="/model-y" className="hover:text-gray-400 text-[16px] font-sf-ui">Model Y</Link>
-        <Link to="/solar-roof" className="hover:text-gray-400 text-[16px] font-sf-ui">Solar Roof</Link>
-        <Link to="/solar-panels" className="hover:text-gray-400 text-[16px] font-sf-ui">Solar Panels</Link>
+        <Link to="/model-s" className={`py-2 ${modelSIsActive('/model-s')}`} onClick={() => handleLinkClick('/model-s')}>
+          Model S
+        </Link>
+        <Link to="/model-3" className={`py-2 ${model3IsActive('/model-3')}`} onClick={() => handleLinkClick('/model-3')}>
+          Model 3
+        </Link>
+        <Link to="/model-x" className={`py-2 ${modelXIsActive('/model-x')}`} onClick={() => handleLinkClick('/model-x')}>
+          Model X
+        </Link>
+        <Link to="/model-y" className={`py-2 ${modelYIsActive('/model-y')}`} onClick={() => handleLinkClick('/model-y')}>
+          Model Y
+        </Link>
+        <Link to="/solar-roof" className={`py-2 ${solarRoofIsActive('/solar-roof')}`} onClick={() => handleLinkClick('/solar-roof')}>
+          Solar Roof
+        </Link>
+        <Link to="/solar-panels" className={`py-2 ${solarPanelsIsActive('/solar-panels')}`} onClick={() => handleLinkClick('/solar-panels')}>
+          Solar Panels
+        </Link>
 
         <Search>
           <SearchIconWrapper>

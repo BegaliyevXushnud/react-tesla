@@ -1,14 +1,49 @@
+import React, { useState } from 'react';
+import Img1 from "../../assets/roof.png";
+import Img2 from "../../assets/roof1.jpg";
+import Img3 from "../../assets/solor-1.png";
 
-import React from 'react'
+import { BsChevronCompactLeft, BsChevronCompactRight } from 'react-icons/bs';
 
-const SolorRoof = () => {
+const Solar = () => {
+  const slides = [
+    { url: Img1 },
+    { url: Img2 },
+    { url: Img3 },
+  ];
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const prevSlide = () => {
+    const isFirstSlide = currentIndex === 0;
+    const newIndex = isFirstSlide ? slides.length - 1 : currentIndex - 1;
+    setCurrentIndex(newIndex);
+  };
+
+  const nextSlide = () => {
+    const isLastSlide = currentIndex === slides.length - 1;
+    const newIndex = isLastSlide ? 0 : currentIndex + 1;
+    setCurrentIndex(newIndex);
+  };
+
   return (
-    <div>
-      <h1 className='text-white text-[100px]'>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto exercitationem aliquam enim! Officiis fugiat inventore voluptate quo nisi recusandae eius. Dolores odit esse deleniti ullam accusantium nihil? Voluptatem libero modi facilis quod ipsum rem at, tenetur odio similique nihil molestiae amet ad, voluptas fuga accusantium vero laudantium asperiores! Dicta, ratione. Quia similique, nisi delectus saepe repudiandae dolorem, reiciendis qui nihil exercitationem ut unde, eos dolor! Assumenda placeat sequi ullam laboriosam. Excepturi maiores, amet, eligendi, necessitatibus placeat at asperiores commodi quam a nostrum veniam non illo eveniet repellat voluptatum beatae est maxime? Aliquam ipsam magni quia sunt pariatur tempore id! Eum nobis ipsa quo. Iusto, iste. Sunt commodi repudiandae sed illo facilis voluptatibus libero velit corporis sit eos consequuntur architecto rem vel quidem provident, id perferendis. Animi a illo temporibus, cumque iusto fuga assumenda nam commodi, odit laudantium perspiciatis ut perferendis expedita explicabo, molestiae iure. Aliquid ducimus expedita pariatur veritatis iure omnis doloribus a. Optio quas deserunt, aliquid necessitatibus laborum temporibus, iure adipisci minus rerum ab ad repellendus dolorum consequatur voluptas illo ex nemo quod perspiciatis? Corrupti, minus, illo praesentium autem ex consequatur corporis vero tempora facilis pariatur nostrum quo odit nihil qui possimus quisquam obcaecati enim nisi unde in. Recusandae, dolores a exercitationem aliquam inventore ad eveniet, repudiandae vel magnam aliquid cum expedita vero officia velit ducimus deleniti voluptatem maxime architecto? Facilis suscipit nobis tempora, officia nostrum quibusdam ab sapiente illo dolorem voluptatum nulla numquam fugit, asperiores rerum fuga vero maiores facere eos eaque? Nisi incidunt temporibus mollitia alias exercitationem quae ipsum sit at dolorum. Quibusdam eos quas nisi et rem tempore odio quos totam aperiam nostrum, unde sapiente adipisci tempora autem vero neque omnis error! Rem aspernatur iusto voluptatum deserunt libero consequuntur, architecto eius ipsam doloremque a quibusdam, temporibus fugiat? Aliquid reiciendis ipsa ea impedit doloribus quis, laboriosam asperiores explicabo nesciunt iste velit voluptate ipsam consequatur pariatur, nisi totam dignissimos cupiditate dolor? Sunt nemo hic libero corporis blanditiis consectetur vitae, dolores repellendus dolorum, nobis, natus sapiente laborum sint! Molestiae exercitationem earum quidem quas vel nisi repellat, optio sapiente, similique illo alias aliquid ab commodi harum saepe natus fugiat. Repudiandae asperiores error non harum neque culpa. Non quo perferendis pariatur quas nisi, voluptatibus odit praesentium laborum sequi eveniet excepturi totam ex vero architecto minus. Fugit deserunt eaque ducimus voluptas provident sed delectus placeat vitae nesciunt doloremque exercitationem debitis, nisi velit vel quos. Sed debitis dolor nam tempora sequi quis ex expedita distinctio? Ab ad sed provident id natus. Quam inventore aliquid sit itaque sint id? Itaque eius a ad perferendis ea ut quam necessitatibus quaerat magni, consequatur sint magnam laborum at molestiae. Quas illo corrupti quibusdam commodi atque a ipsum perspiciatis ab, facere magnam maiores minus qui voluptatem praesentium dolore cumque officia quam unde odit consequuntur. Sint quod inventore ea nobis eius minima fugit deserunt! Itaque dolore necessitatibus hic mollitia fugit quibusdam excepturi in vero. Ullam hic quas itaque reiciendis doloremque, quis praesentium quaerat deserunt sed recusandae voluptas, rerum atque, quam ex soluta nihil animi laboriosam placeat perspiciatis et accusantium non magni reprehenderit qui. Illum ab ut consequuntur minima assumenda veniam, odio eos sint magni modi eligendi labore pariatur perferendis, ea veritatis quae, quam cumque dolorem ipsam magnam molestias asperiores! Fugiat, minus ab. Laboriosam ducimus facilis voluptatem minima distinctio veniam ullam tempore enim, illo eos minus ab repudiandae impedit facere nemo velit sed? Nulla eveniet, maiores cum nemo atque, rerum, animi consequatur debitis consequuntur enim tenetur eligendi officia quos eius suscipit repellendus saepe error aliquam esse! Nostrum a quo ipsa, optio minima deleniti velit corrupti, laboriosam rem, aut quia obcaecati neque molestias eveniet totam magni quibusdam odio amet nisi. Non, quidem iure vel itaque repudiandae voluptate quibusdam. Dolor explicabo totam sunt, excepturi est adipisci asperiores voluptate. Obcaecati, incidunt maiores esse rerum omnis eaque placeat optio ab, ipsa facilis suscipit porro tempora reiciendis, voluptatum accusantium? Inventore voluptatum commodi consequuntur, incidunt consectetur repudiandae veritatis excepturi dolorem aliquid quisquam illo blanditiis deleniti consequatur magnam harum nostrum fugiat tempora suscipit tempore nisi architecto? Vero, vel minus quas delectus eveniet voluptatum dicta. Tenetur maxime repudiandae aperiam magnam, asperiores distinctio enim mollitia iure dolorem, nesciunt numquam dignissimos eveniet perspiciatis assumenda cum porro id voluptates eaque sapiente delectus! Quas fugiat perferendis, earum, explicabo maxime vero ad maiores optio iste iusto necessitatibus id corporis reiciendis! Similique hic nemo perferendis aspernatur aut? Iusto eos voluptas eveniet facere cupiditate obcaecati fugit, velit tenetur blanditiis alias dolor quam nam neque quaerat veritatis quia sunt nemo odit suscipit, magni tempora quibusdam unde. Consequatur maxime aut dolore. Molestiae ipsa eveniet corporis dolorem nemo, fugiat blanditiis vel sapiente facere aliquam perferendis officia doloribus, quasi similique minus, tenetur quod sed! Magni hic temporibus et praesentium ullam facere! Aspernatur, nobis corporis architecto ullam tenetur quo tempora similique esse blanditiis earum optio quasi dicta est sed voluptatum doloribus ipsa omnis voluptatem, recusandae temporibus voluptate beatae placeat officia incidunt? Veritatis saepe qui quaerat minus ipsa vitae blanditiis cumque excepturi omnis, ab similique, nobis et doloribus, enim cupiditate quidem impedit necessitatibus. Ducimus, laudantium nostrum debitis labore rerum sint necessitatibus nisi! Repudiandae debitis aliquam eos cum asperiores vitae consectetur inventore quam consequuntur, harum, iste minima molestias veniam id facilis corrupti autem eius in provident optio placeat esse, porro unde? Adipisci in quia doloribus, id ullam tempora provident autem consectetur magni nobis saepe cumque quae recusandae labore esse nihil distinctio accusamus dicta dolores eius dolor ducimus earum ex expedita. Minima tempore ea aliquam, doloremque ab nostrum iusto laboriosam veniam. Vitae quia eos, placeat voluptatem provident inventore! Illo, ea ipsum, nisi, dolore quibusdam earum commodi perspiciatis harum pariatur rem aperiam. Commodi adipisci, libero laudantium voluptas veniam mollitia! Esse facilis aut, inventore voluptatibus incidunt tempora cupiditate vel itaque quam autem debitis eveniet unde in commodi delectus, tenetur iste fugiat! Rerum dolorem unde et impedit commodi, ipsum explicabo quam sit dolorum. Distinctio voluptates voluptate autem sed laborum et, minima eos quae, dolores molestias provident facilis porro aut, quia fuga perspiciatis. In, quam facilis minima quia alias autem nostrum quae id consequatur incidunt rerum mollitia? Quod nam necessitatibus ullam repudiandae minus, adipisci a voluptatibus at ab, vitae ratione culpa eligendi cupiditate ipsam totam iste fuga itaque? Ab sint minus pariatur eaque architecto quam, reiciendis commodi esse exercitationem, quibusdam a aut nobis officia ullam et suscipit. Et dolorem voluptate corrupti, atque sequi officia vel incidunt sit blanditiis reprehenderit exercitationem adipisci sint! Corrupti, ex quod impedit at magnam eos debitis ipsum! Iusto blanditiis laboriosam magnam architecto molestiae, atque consequatur cum nemo placeat dolorem laudantium commodi nam temporibus doloribus officiis quas, non rem praesentium impedit minima nihil accusamus dolorum veritatis. Tempore similique iure cupiditate temporibus molestias numquam debitis blanditiis velit alias provident. Ipsam repellendus esse dolores eligendi aperiam beatae possimus reiciendis explicabo ratione fugit quae minima corrupti blanditiis ipsa at veritatis asperiores quis id voluptatum, laudantium consectetur molestiae? Illum non debitis accusantium doloribus nihil molestias incidunt perferendis consequuntur obcaecati earum. Omnis saepe voluptates, dicta quam molestiae tenetur ex praesentium, veniam debitis nihil in quidem dolorem aspernatur architecto asperiores aliquam nemo accusamus dolor assumenda, quasi itaque libero. Et soluta hic, quos id magnam culpa labore assumenda, mollitia tenetur fugit minus delectus incidunt veniam beatae esse dicta similique laudantium nesciunt illo vel vero officia explicabo in commodi? Perspiciatis ullam pariatur vero recusandae, asperiores officiis sed a cum, repellendus incidunt animi.
-      </h1>
+    <div className='max-w-[1400px] h-[560px] w-full m-auto py-2 px-2 relative group'>
+      <div 
+        style={{ backgroundImage: `url(${slides[currentIndex].url})` }} 
+        className='w-full h-full bg-center bg-cover duration-500'
+      ></div>
+      <div 
+        className='hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[50%] left-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer'
+      >
+        <BsChevronCompactLeft onClick={prevSlide} size={30} />
+      </div>
+      <div 
+        className='hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[50%] right-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer'
+      >
+        <BsChevronCompactRight onClick={nextSlide} size={30} />
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default SolorRoof
+export default Solar;

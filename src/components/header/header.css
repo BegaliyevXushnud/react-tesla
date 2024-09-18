@@ -71,3 +71,12 @@
   display: flex;
   justify-content: flex-end;
 }
+
+.active-link {
+  color: #e1e1e1; /* Or any color you choose for active links */
+  
+}
+
+.inactive-link {
+  color: #ffffff; /* Or any color you choose for inactive links */
+}
